@@ -1,6 +1,26 @@
 class TeamsController < ApplicationController
 	def index
-		team_index = Team.all   
-		render :json => team_index
+		render_teams
 	end
+
+	def create
+		Team.create(team_params)
+		render_teams
+	end
+
+	def destroy
+		Team.find(params[:id]).destroy
+		render_teams
+	end
+
+	private
+
+	def team_params
+		params.require(:team).permit(:name)
+	end
+
+	def render_teams
+		render :json => Team.all   
+	end
+
 end

@@ -3,6 +3,19 @@
 <div>
     <h2>NBA Players</h2>
     <ul>
-        <li ng-repeat="player in players">{{ player.fn }} {{ player.ln }}</li>
+        <li ng-repeat="player in players">{{ player.fn }} {{ player.ln }} | <button ng-click="deletePlayer(player.id)">Delete Player</button></li>
     </ul>
+</div>
+
+<div>
+	<h2>Add a new player</h2>
+	<p>
+		<label>First Name:</label>
+		<input type="text" ng-model="newPlayer.player.fn">
+	</p>
+	<p>
+		<label>Last Name:</label>
+		<input type="text" ng-model="newPlayer.player.ln">
+	</p>
+	<input type="submit" ng-click="createPlayer()" value="Create Player">
 </div>

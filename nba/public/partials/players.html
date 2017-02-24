@@ -1,0 +1,33 @@
+<div>
+	<h2>Add a player</h2>
+	<p>
+		<label>First Name:</label>
+		<input type="text" ng-model="newPlayer.player.fn">
+	</p>
+	<p>
+		<label>Last Name:</label>
+		<input type="text" ng-model="newPlayer.player.ln">
+	</p>
+	<p>
+		<label>Select a team:</label>
+		<select ng-model="newPlayer.player.teamName">
+			<option>some option</option>
+		</select>
+	</p>
+
+	<h2>All layers</h2>
+	<table>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Team</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat="p in allPlayers">
+			<td>{{p.fn}}</td>
+			<td>{{p.ln}}</td>
+			<td>something</td>
+			<td>some action</td>
+		</tr>
+	</table>
+</div>

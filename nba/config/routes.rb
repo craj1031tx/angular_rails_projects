@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
-  
-  root 'static_pages#index'
+  root 'static#index'
 
-  #PLAYER ROUTES
+  #player routes
   get 'players' => 'players#index'
-  post 'players' => 'players#create'
-  delete 'players/:id' => 'players#destroy'
 
 
-  #TEAM ROUTES
-  get 'all_teams' => 'teams#index'
-  post 'teams' => 'teams#create'
-  delete 'teams/:id' => 'teams#destroy'
+  #team routes
+  get 'teams' => 'teams#index'
+
+
+  #association routes
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

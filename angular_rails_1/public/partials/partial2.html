@@ -3,6 +3,15 @@
 <div>
     <h2>NBA Teams</h2>
     <ul>
-        <li ng-repeat="team in teams">{{ team.name }}</li>
+        <li ng-repeat="team in teams">{{ team.name }} | <button ng-click="deleteTeam(team.id)">Delete</button></li>
     </ul>
+</div>
+
+<div>
+	<h2>Add a new team</h2>
+	<p>
+		<label>Team Name</label>
+		<input type="text" ng-model="newTeam.team.name">
+	</p>
+	<input type="submit" ng-click="createTeam();" value="Create Team">
 </div>

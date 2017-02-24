@@ -1,6 +1,27 @@
 class PlayersController < ApplicationController
 	def index
-		testobject = Player.all
-		render :json => testobject
+		render_players
 	end
+
+	def create
+		Player.create(player_params)
+		render_players
+	end
+
+	def destroy
+		Player.find(params[:id]).destroy
+		render_players
+	end
+
+	private
+
+	def render_players
+		render :json => Player.all
+	end
+
+	def player_params
+		params.require(:player).permit(:fn,:ln)
+	end
+
 end
+
