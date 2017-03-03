@@ -1,0 +1,21 @@
+<!-- player/team assoications partial -->
+
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Current Team</th>
+		<th>Select a new team</th>
+		<th>Set new team</th>
+	</tr>
+	<tr ng-repeat="p in playersWithTeams">
+		<td>{{p.fn}} {{p.ln}}</td>
+		<td>{{p.team.name}}</td>
+		<td>
+			<select ng-options="t.id as t.name for t in teams" ng-model="selectedTeam"></select>
+		</td>
+		<td><button ng-click="changeTeam(p.id, selectedTeam)">Change!</button></td>
+	</tr>
+</table>
+
+

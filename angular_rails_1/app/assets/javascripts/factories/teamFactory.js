@@ -8,6 +8,12 @@ function teamFactory(){
 		})
 	};
 
+	this.playerIndex = function(callback){
+		$http.get("/team_players").success(function(returnedData){
+			callback(returnedData);
+		});
+	};
+
 	this.create = function(team, callback){
 		$http.post("/teams", team).success(function(returnedData){
 			callback(returnedData);
@@ -16,6 +22,12 @@ function teamFactory(){
 
 	this.delete = function(id, callback){
 		$http.delete("/teams/"+id).success(function(returnedData){
+			callback(returnedData);
+		});
+	};
+
+	this.changeTeam = function(pid, tid, callback){
+		$http.get("/teams/"+pid+"/"+tid).success(function(returnedData){
 			callback(returnedData);
 		});
 	};

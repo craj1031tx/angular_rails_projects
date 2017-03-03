@@ -10,8 +10,10 @@ Rails.application.routes.draw do
 
   #TEAM ROUTES
   get 'all_teams' => 'teams#index'
+  get 'team_players' => 'teams#team_players'
   post 'teams' => 'teams#create'
   delete 'teams/:id' => 'teams#destroy'
+  get 'teams/:pid/:tid' => 'teams#change_team'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

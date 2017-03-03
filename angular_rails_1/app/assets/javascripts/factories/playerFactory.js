@@ -1,6 +1,7 @@
 //PLAYER FACTORY
 app.factory("playerFactory", function($http){
 	var factory = {};
+	
 	factory.index = function(callback){
 		$http.get("/players").success(function(output){
 			callback(output);

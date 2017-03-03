@@ -5,6 +5,10 @@ app.controller("teamsController", function($scope, teamFactory){
 		$scope.teams = returnedData;
 	})
 
+	teamFactory.playerIndex(function(returnedData){
+		$scope.playersWithTeams = returnedData;
+	})
+
 	$scope.createTeam = function(){
 		teamFactory.create($scope.newTeam,function(json){
 			$scope.teams = json;
@@ -17,4 +21,11 @@ app.controller("teamsController", function($scope, teamFactory){
 		});
 	};
 
+	$scope.changeTeam = function(player_id, team_id){
+		teamFactory.changeTeam(player_id, team_id, function(returnedData){
+			$scope.playersWithTeams = returnedData;
+		});
+	};
+
 })
+

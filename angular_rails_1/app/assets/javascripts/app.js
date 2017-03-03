@@ -12,6 +12,11 @@ app.config(function($routeProvider, $httpProvider){
 			templateUrl:"/partials/partial2.html",
 			controller:"teamsController"
 		})
+		.when("/associations",{
+			templateUrl:"/partials/assocPartial.html",
+			controller:"teamsController"
+		})
+		.otherwise("/")
 
 	$httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 });
